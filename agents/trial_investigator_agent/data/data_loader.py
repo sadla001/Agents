@@ -1,7 +1,7 @@
 import os
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict
+from typing import Dict, Optional
 
 import pandas as pd
 
@@ -30,7 +30,7 @@ def _read_sheet(xlsx_path: str, sheet_name: str, header_row: int = 2) -> pd.Data
     return df
 
 
-def load_trial_data(dataset_path: str | None = None) -> TrialData:
+def load_trial_data(dataset_path: Optional[str] = None) -> TrialData:
     xlsx_path = dataset_path or os.getenv("DATASET_PATH") or str(_DEFAULT_DATASET)
     if not xlsx_path:
         raise ValueError("DATASET_PATH not set and dataset_path not provided.")

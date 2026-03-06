@@ -54,7 +54,7 @@ Each agent uses its own data; place files as follows:
 | Agent | Required files | Location |
 |-------|----------------|----------|
 | **payer_agent** | `payer_expanded_dataset.xlsx` | `agents/payer_agent/` |
-| **trial_investigator_agent** | `agent_input_dataset.xlsx` (SDTM sheets: SDTM_RS, SDTM_AE, SDTM_LB, SDTM_EX, PROTOCOL_RULES) | `agents/trial_investigator_agent/data/` |
+| **trial_investigator_agent** | `agent_input_dataset.xlsx` (SDTM sheets: SDTM_RS, SDTM_AE, SDTM_LB, SDTM_EX, PROTOCOL_RULES) | `agents/trial_investigator_agent/data/agent_input_dataset.xlsx` |
 | **clinician_agent** | `clinician_protocol_table_formula_guide.xlsx`, `intent_aware_interop_dataset (1).xlsx` | `agents/clinician_agent/` |
 
 ## Example Prompts
