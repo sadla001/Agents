@@ -1,0 +1,16 @@
+FROM python:3.11-slim
+ 
+WORKDIR /app
+ 
+# Install dependencies first (better Docker layer caching)
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+ 
+# Copy all source files
+COPY config.py data.py rules.py agent.py main.py ./
+COPY static/ ./static/
+ 
+# Cloud Run requires port 8080
+EXPOSE 8080
+ 
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
